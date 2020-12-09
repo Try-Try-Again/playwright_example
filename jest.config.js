@@ -1,9 +1,9 @@
 module.exports = {
   preset: "jest-playwright-preset",
     "moduleFileExtensions": [
-     "js",
-     "css",
-      "html"
+    "js",
+    "css",
+    "html"
     ],
     // "setupFilesAfterEnv": [
     //   "<rootDir>/setupTests.js"

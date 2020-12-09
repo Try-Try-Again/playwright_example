@@ -1,4 +1,4 @@
-//const { readFileSync } = require('fs');
+const { readFileSync } = require('fs');
 const supertest = require('supertest');
 const app = require('./server');
 const request = supertest(app)
@@ -16,3 +16,12 @@ describe('GET /test', () => {
 	})
 });
 
+
+describe('GET /', () => {
+  it('response text is index.html file', async () => {
+    const response = await request.get('/');
+    const indexHTML = readFileSync('./client/public/index.html').toString();
+
+    expect(response.text).toBe(indexHTML);
+  });
+});

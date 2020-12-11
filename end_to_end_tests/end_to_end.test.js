@@ -1,5 +1,5 @@
 const { chromium } = require('playwright');
-const app = require('./api/server.js');
+const app = require('../api/server.js');
 
 let browser;
 let page;

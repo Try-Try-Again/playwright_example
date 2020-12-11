@@ -1,4 +1,5 @@
 module.exports = {
+  command: 'npm start',
   launchOptions: {
     headless: true
   },

@@ -8,12 +8,12 @@ describe('GET /test', () => {
       expect(1).toBe(1)
   });
 
-	it('Gets the test endpoint', async () => {
-		// Sends GET Request to /test endpoint
-		const response = await request.get('/test')
-		expect(response.status).toBe(200)
-		expect(response.body.message).toBe('pass!')
-	})
+  it('Gets the test endpoint', async () => {
+    // Sends GET Request to /test endpoint
+    const response = await request.get('/test')
+    expect(response.status).toBe(200)
+    expect(response.body.message).toBe('pass!')
+  })
 });
 
 

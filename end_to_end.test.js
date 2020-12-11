@@ -29,8 +29,10 @@ it('Page title is "To-Do"', async () => {
 	// assert 'To-Do' in browser.title
   expect(await page.title()).toBe('To-Do');
 });
-//
 // # She is invited to enter a to-do item straight away
+it('Finish the Test!', () => {
+  throw new Error('Finish the Test!');
+});
 //
 // # She types "Buy peacock feathers" into a text box (Edith's hobby
 // # is tying fly-fishing lures)

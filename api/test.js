@@ -9,10 +9,10 @@ describe('GET /test', () => {
   });
 
 	it('Gets the test endpoint', async () => {
-		// Sends GET Request to /test endpoint
-		const response = await request.get('/test')
-		expect(response.status).toBe(200)
-		expect(response.body.message).toBe('pass!')
+    // Sends GET Request to /test endpoint
+    const response = await request.get('/test')
+    expect(response.status).toBe(200)
+    expect(response.body.message).toBe('pass!')
 	})
 });
 

@@ -33,7 +33,7 @@ describe("Test can start a list and retrieve it later", () => {
   it('Input Box Has Placeholder Text', async () => {
     await page.goto('http://localhost:3000');
     const placeholderText = await page.$eval(
-      '#id_new_item',
+      '.new-item-form',
       el => el.placeholder
     );
     expect(placeholderText).toEqual('Enter a to-do item');

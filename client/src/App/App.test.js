@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { NewItemForm } from '../NewItemForm';
 
-import App from './App.js';
+import { App } from './App.js';
 
 
 describe('App', () => {

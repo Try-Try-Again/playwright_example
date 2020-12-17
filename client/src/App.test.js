@@ -1,8 +1,11 @@
-const React = require('react');
-const { mount } = require('enzyme');
+import React from 'react';
+import { mount } from 'enzyme';
 
-const App = require('./App');
+import App from './App.js';
+
 
 describe('App', () => {
-  it('', () => {});
+  it('', () => {
+    const wrapper = mount(<App />);
+  });
 });

@@ -4,8 +4,5 @@ module.exports = {
     "js",
     "css",
     "html"
-    ],
-    // "setupFilesAfterEnv": [
-    //   "<rootDir>/setupTests.js"
-    // ]
+    ]
 }

@@ -22,7 +22,7 @@ afterEach(async () => {
 
 describe("Test can start a list and retrieve it later", () => {
 
-  it('Page title is "To-Do"', async () => {
+  it('has Page title "To-Do"', async () => {
     // Edith has heard about a cool new online to-do app. She goes
     // to check out its homepage
     await page.goto('http://localhost:3000');
@@ -31,7 +31,7 @@ describe("Test can start a list and retrieve it later", () => {
     expect(await page.title()).toBe('To-Do');
   });
 
-  it('Input Box Has Placeholder Text', async () => {
+  it('has an Input Box with Placeholder Text', async () => {
     // # She is invited to enter a to-do item straight away
     await page.goto('http://localhost:3000');
     const placeholderText = await page.$eval(
@@ -41,7 +41,7 @@ describe("Test can start a list and retrieve it later", () => {
     expect(placeholderText).toEqual('Enter a to-do item');
   });
 
-  it('', async () => {
+  it('contains a list', async () => {
     await page.goto('http://localhost:3000');
     // She types "Buy peacock feathers" into a text box (Edith's hobby
     // is tying fly-fishing lures)

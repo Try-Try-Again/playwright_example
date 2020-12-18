@@ -21,6 +21,7 @@ afterEach(async () => {
 });
 
 describe("Test can start a list and retrieve it later", () => {
+
   it('Page title is "To-Do"', async () => {
     // Edith has heard about a cool new online to-do app. She goes
     // to check out its homepage
@@ -29,8 +30,9 @@ describe("Test can start a list and retrieve it later", () => {
     // assert 'To-Do' in browser.title
     expect(await page.title()).toBe('To-Do');
   });
-  // # She is invited to enter a to-do item straight away
+
   it('Input Box Has Placeholder Text', async () => {
+    // # She is invited to enter a to-do item straight away
     await page.goto('http://localhost:3000');
     const placeholderText = await page.$eval(
       '.new-item-form',
@@ -38,11 +40,20 @@ describe("Test can start a list and retrieve it later", () => {
     );
     expect(placeholderText).toEqual('Enter a to-do item');
   });
+
+  it('', async () => {
+    await page.goto('http://localhost:3000');
+    // She types "Buy peacock feathers" into a text box (Edith's hobby
+    // is tying fly-fishing lures)
+    await page.fill('.new-item-form', "Buy peacock feathers");
+    // When she hits enter, the page updates, and now the page lists
+    await page.press('.new-item-form', "Enter");
+    const table = await page.$eval(
+      '.list-table',
+      el => el.placeholder
+    );
+  });
   //
-  // She types "Buy peacock feathers" into a text box (Edith's hobby
-  // is tying fly-fishing lures)
-  //
-  // When she hits enter, the page updates, and now the page lists
   // "1: Buy peacock feathers" as an item in a to-do list
   //
   // There is still a text box inviting her to add another item. She

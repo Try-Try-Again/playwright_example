@@ -21,9 +21,10 @@ describe('App', () => {
     expect(formList).toHaveLength(1);
   });
 
-  it('', () => {
+  it('has a to-do list component', () => {
     const wrapper = shallow(<App />);
     const listList = wrapper.find(ToDoList);
     expect(listList).toHaveLength(1);
   });
+
 });

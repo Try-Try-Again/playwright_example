@@ -1,8 +1,12 @@
 import React from 'react';
 import { NewItemForm } from '../NewItemForm';
 
+import { ToDoList } from '../ToDoList';
 
 export const App = () => (
-  <NewItemForm className={"new-item-form"}/>
+  <div>
+    <NewItemForm className={"new-item-form"}/>
+    <ToDoList />
+  </div>
 );
 

@@ -6,7 +6,7 @@ describe('NewItemForm', () => {
 
   it('is an input', () => {
     const wrapper = shallow(<NewItemForm />);
-    const type = wrapper.type()
+    const type = wrapper.type();
     expect(type).toEqual('input');
   });
 

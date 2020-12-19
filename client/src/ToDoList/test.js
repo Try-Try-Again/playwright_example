@@ -10,7 +10,7 @@ describe('ToDoList', () => {
     expect(type).toEqual('table');
   });
 
-  it('', () => {
+  it('has "list-table" class', () => {
     const wrapper = shallow(<ToDoList />);
     expect(wrapper.hasClass('list-table')).toBeTruthy();
   });

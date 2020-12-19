@@ -48,12 +48,10 @@ describe("Test can start a list and retrieve it later", () => {
     await page.fill('.new-item-form', "Buy peacock feathers");
     // When she hits enter, the page updates, and now the page lists
     await page.press('.new-item-form', "Enter");
-    const table = await page.$eval(
-      '.list-table',
-      el => el.placeholder
-    );
+    const table = await page.$('.list-table');
+    const contents = await table.innerHTML()
+    console.log(JSON.stringify(contents))
   });
-  //
   // "1: Buy peacock feathers" as an item in a to-do list
   //
   // There is still a text box inviting her to add another item. She

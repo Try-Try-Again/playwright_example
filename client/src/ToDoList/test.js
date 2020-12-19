@@ -4,19 +4,22 @@ import { ToDoList } from './ToDoList.js';
 
 describe('ToDoList', () => {
 
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<ToDoList />);
+  });
+
   it('is a table', () => {
-    const wrapper = shallow(<ToDoList />);
     const type = wrapper.type();
     expect(type).toEqual('table');
   });
 
   it('has "list-table" class', () => {
-    const wrapper = shallow(<ToDoList />);
     expect(wrapper.hasClass('list-table')).toBeTruthy();
   });
 
   it('', () => {
-    const wrapper = shallow(<ToDoList />);
     expect(wrapper.contains(
       <li className="to-do-item">Buy peacock feathers</li>
     )).toBeTruthy();

@@ -41,18 +41,19 @@ describe("Test can start a list and retrieve it later", () => {
     expect(placeholderText).toEqual('Enter a to-do item');
   });
 
-  it('contains a list', async () => {
+  it('stores a list element', async () => {
     await page.goto('http://localhost:3000');
     // She types "Buy peacock feathers" into a text box (Edith's hobby
     // is tying fly-fishing lures)
     await page.fill('.new-item-form', "Buy peacock feathers");
     // When she hits enter, the page updates, and now the page lists
+    // "1: Buy peacock feathers" as an item in a to-do list
     await page.press('.new-item-form', "Enter");
     const table = await page.$('.list-table');
-    const contents = await table.innerHTML()
-    console.log(JSON.stringify(contents))
+    const tableRows = await table.$('li');
+    const innerHTML = await tableRows.innerHTML();
+    expect(innerHTML).toContain("Buy peacock feathers");
   });
-  // "1: Buy peacock feathers" as an item in a to-do list
   //
   // There is still a text box inviting her to add another item. She
   // enters "Use peacock feathers to make a fly" (Edith is very methodical)

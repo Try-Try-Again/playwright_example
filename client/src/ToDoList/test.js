@@ -15,4 +15,11 @@ describe('ToDoList', () => {
     expect(wrapper.hasClass('list-table')).toBeTruthy();
   });
 
+  it('', () => {
+    const wrapper = shallow(<ToDoList />);
+    expect(wrapper.contains(
+      <li className="to-do-item">Buy peacock feathers</li>
+    )).toBeTruthy();
+  });
+
 });

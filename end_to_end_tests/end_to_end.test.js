@@ -40,6 +40,13 @@ describe("Test can start a list and retrieve it later", () => {
     expect(placeholderText).toEqual('Enter a to-do item');
   });
 
+  it('has no elements present before posting', async () => {
+    const table = await page.$('.list-table');
+    const tableRows = await table.$('li');
+    const innerHTML = await tableRows.innerHTML();
+    expect(innerHTML).not.toContain("Buy peacock feathers");
+  });
+
   it('stores a list element', async () => {
     // She types "Buy peacock feathers" into a text box (Edith's hobby
     // is tying fly-fishing lures)
@@ -52,7 +59,7 @@ describe("Test can start a list and retrieve it later", () => {
     const innerHTML = await tableRows.innerHTML();
     expect(innerHTML).toContain("Buy peacock feathers");
   });
-  //
+
   // There is still a text box inviting her to add another item. She
   // enters "Use peacock feathers to make a fly" (Edith is very methodical)
   //

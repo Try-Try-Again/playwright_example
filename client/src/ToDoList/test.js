@@ -19,10 +19,11 @@ describe('ToDoList', () => {
     expect(wrapper.hasClass('list-table')).toBeTruthy();
   });
 
-  it('', () => {
+
+  it('does not start with any list item', () => {
     expect(wrapper.contains(
       <li className="to-do-item">Buy peacock feathers</li>
-    )).toBeTruthy();
+    )).toBeFalsy();
   });
 
 });

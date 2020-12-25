@@ -43,8 +43,8 @@ describe("Test can start a list and retrieve it later", () => {
   it('has no elements present before posting', async () => {
     const table = await page.$('.list-table');
     const tableRows = await table.$('li');
-    const innerHTML = await tableRows.innerHTML();
-    expect(innerHTML).not.toContain("Buy peacock feathers");
+    // Edith does not see any previous list items
+    expect(tableRows).toBeNull()
   });
 
   it('stores a list element', async () => {

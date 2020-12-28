@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { NewItemForm } from './NewItemForm.js';
+import { submitItem } from './submitItem.js';
 
 describe('NewItemForm', () => {
 
@@ -14,4 +15,12 @@ describe('NewItemForm', () => {
     const type = wrapper.type();
     expect(type).toEqual('form');
   });
+
+  it('', () => {
+    const wrapper = shallow(<NewItemForm />);
+    const MockSubmitItem = jest.fn(submitItem);
+    wrapper.simulate('submit');
+    expect(MockSubmitItem).toHaveBeenCalled();
+  });
+
 });
